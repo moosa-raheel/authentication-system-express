@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  min-height: 100vh;
+}
+:root {
+  font-size: 62.5%;
+  font-family: "SF Pro Display";
+}
+/*Utility classes*/
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+.center {
+  text-align: center;
+}
+.m {
+  margin: 1rem 0;
+}
+
+/* Form styling */
+.wrapper {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  background: #f0f2f5;
+}
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+.main form input {
+  font-size: 1.7rem;
+  padding: 1.4rem 1.6rem;
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgb(221, 223, 226);
+  display: block;
+  margin: 1.5rem 0;
+  outline: none;
+}
+.main form input:focus {
+  border-color: #1877f2;
+}
+input[type="submit"] {
+  background: #1877f2;
+  color: #fff;
+  border: none !important;
+  cursor: pointer;
+}
+form {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+a.forget {
+  display: block;
+  font-size: 1.4rem;
+}
+a.forget:hover {
+  text-decoration: underline;
+}
+a.forget::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: rgb(221, 223, 226);
+  margin: 1.5rem 0;
+}
+button.btn-create {
+  margin: 2rem auto;
+  background: #42b72a;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 900;
+  transition: background 0.3s ease;
+}
+button.btn-create:hover {
+  background: #36a420;
+}
+div.form form {
+  width: 80%;
+  margin: 0 auto;
+}
+div.logo img {
+  height: 10.6rem;
+  width: -2.8rem;
+}
+/* Universal styling */
+
+h2 {
+  font-size: 2.8rem;
+  margin-left: 3.2rem;
+}
+.btn {
+  display: block;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+@media (max-width: 911px) {
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 780px) {
+  :root {
+    font-size: 50%;
+  }
+}

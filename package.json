@@ -1,0 +1,26 @@
+{
+  "name": "authentication-system",
+  "version": "1.0.0",
+  "description": "It's just a authentication system",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app",
+    "start": "node app"
+  },
+  "keywords": [],
+  "author": "Moosa Raheel",
+  "license": "ISC",
+  "dependencies": {
+    "connect-mongo": "^5.0.0",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.5.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1"
+  },
+  "type": "module"
+}
