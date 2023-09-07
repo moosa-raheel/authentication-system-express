@@ -25,9 +25,18 @@
           />
           <input type="submit" value="Log in" />
           <a href="#" class="forget center">Forgotten password?</a>
-          <button class="btn btn-create">Create new account</button>
+          <button type="button" class="btn btn-create">
+            Create new account
+          </button>
         </form>
       </div>
     </div>
   </div>
 </div>
+<script>
+  const createBtn = document.querySelector("button.btn-create");
+  createBtn.addEventListener("click", () => {
+    const modal = document.getElementById("main-signup");
+    modal.classList.toggle("active-signup");
+  });
+</script>

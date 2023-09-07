@@ -1,0 +1,53 @@
+<div id="main-signup" class="main-signup">
+  <div class="form">
+    <h1 class="signup">Sign Up</h1>
+    <p class="signup">It's quick and easy</p>
+    <form>
+      <span class="cross">&times;</span>
+      <input type="text" name="fname" id="fname" placeholder="First name" />
+      <input type="text" name="sname" id="sname" placeholder="Surname" />
+      <input type="email" name="email" id="email" placeholder="Email address" />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="New password"
+      />
+      <label for="dob">Date of birth <span>?</span></label>
+      <input type="date" name="dob" id="dob" />
+      <p class="sex">Gender <span>?</span></p>
+      <div id="sex-group">
+        <div class="gender">
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="male" value="1" />
+        </div>
+        <div class="gender">
+          <label for="female">Female</label>
+          <input type="radio" name="gender" id="female" value="2" />
+        </div>
+        <div class="gender">
+          <label for="custom">custom</label>
+          <input type="radio" name="gender" id="custom" value="3" />
+        </div>
+      </div>
+      <p class="terms">
+        People who use our service may have uploaded your contact information to
+        Facebook. <span class="link">Learn more</span>.
+      </p>
+      <p class="terms">
+        By clicking Sign Up, you agree to our
+        <span class="link">Terms, Privacy Policy</span> and
+        <span class="link">Cookies Policy</span>. You may receive SMS
+        notifications from us and can opt out at any time.
+      </p>
+      <input type="submit" value="Sign Up" />
+    </form>
+  </div>
+</div>
+<script>
+  const cross = document.querySelector("span.cross");
+  cross.addEventListener("click", () => {
+    const modal = document.getElementById("main-signup");
+    modal.classList.toggle("active-signup");
+  });
+</script>
