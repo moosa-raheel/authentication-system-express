@@ -2,32 +2,63 @@
   <div class="form">
     <h1 class="signup">Sign Up</h1>
     <p class="signup">It's quick and easy</p>
-    <form>
+    <form action="/signup" method="post">
       <span class="cross">&times;</span>
-      <input type="text" name="fname" id="fname" placeholder="First name" />
-      <input type="text" name="sname" id="sname" placeholder="Surname" />
-      <input type="email" name="email" id="email" placeholder="Email address" />
+      <input
+        type="text"
+        name="fname"
+        id="fname"
+        placeholder="First name"
+        required
+      />
+      <input
+        type="text"
+        name="sname"
+        id="sname"
+        placeholder="Surname"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Email address"
+        required
+      />
       <input
         type="password"
         name="password"
         id="password"
         placeholder="New password"
+        required
       />
       <label for="dob">Date of birth <span>?</span></label>
-      <input type="date" name="dob" id="dob" />
+      <input type="date" name="dob" id="dob" required />
       <p class="sex">Gender <span>?</span></p>
       <div id="sex-group">
         <div class="gender">
           <label for="male">Male</label>
-          <input type="radio" name="gender" id="male" value="1" />
+          <input type="radio" name="gender" id="male" value="Male" required />
         </div>
         <div class="gender">
           <label for="female">Female</label>
-          <input type="radio" name="gender" id="female" value="2" />
+          <input
+            type="radio"
+            name="gender"
+            id="female"
+            value="Female"
+            required
+          />
         </div>
         <div class="gender">
           <label for="custom">custom</label>
-          <input type="radio" name="gender" id="custom" value="3" />
+          <input
+            type="radio"
+            name="gender"
+            id="custom"
+            value="Custom"
+            required
+          />
         </div>
       </div>
       <p class="terms">

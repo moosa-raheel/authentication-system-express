@@ -1,6 +1,26 @@
+import { UserModel } from "../models/User.js";
+import bcrypt from "bcrypt";
 class userController {
   static home = (req, res) => {
     res.render("index");
+  };
+  static createUser = async (req, res) => {
+    try {
+      const { fname, sname, email, password, dob, gender } = req.body;
+      const hashPassword = await bcrypt.hash(password, 10);
+      const userDetail = new UserModel({
+        fname: fname,
+        sname: sname,
+        email: email,
+        password: hashPassword,
+        dob: dob,
+        gender: gender,
+      });
+      await userDetail.save();
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
 export { userController };
