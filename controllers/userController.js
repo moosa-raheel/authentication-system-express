@@ -2,7 +2,11 @@ import { UserModel } from "../models/User.js";
 import bcrypt from "bcrypt";
 class userController {
   static home = (req, res) => {
-    res.render("index");
+    if (req.session.username) {
+      res.render("index");
+    } else {
+      res.render("login");
+    }
   };
   static verifyUser = async (req, res) => {
     try {
@@ -11,7 +15,8 @@ class userController {
       if (user) {
         const hashPassword = await bcrypt.compare(password, user.password);
         if (hashPassword) {
-          console.log("login successfully");
+          req.session.username = username;
+          console.log("login success");
         } else {
           console.log("Password is incorrect");
         }
@@ -40,6 +45,16 @@ class userController {
     } catch (error) {
       console.log(error);
     }
+  };
+  static logout = (req, res) => {
+    try {
+      req.session.destroy(() => {
+        console.log("Session destroy");
+      });
+    } catch (err) {
+      console.log(err);
+    }
+    res.redirect("/");
   };
 }
 export { userController };

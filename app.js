@@ -4,6 +4,7 @@ import web from "./routes/web.js";
 import { join } from "path";
 import { config } from "dotenv";
 import { dbConnection } from "./db/dbConnection.js";
+import session from "express-session";
 const app = express();
 
 //Configure environment variables
@@ -23,6 +24,18 @@ app.use(morgan("dev"));
 //Database Connetion
 const uri = process.env.MONGO_URI;
 dbConnection(uri);
+
+//Session
+app.use(
+  session({
+    secret: "console.log",
+    saveUninitialized: true,
+    resave: false,
+    cookie: {
+      maxAge: 10000 * 60 * 60 * 48,
+    },
+  })
+);
 
 // load routes
 app.use("/", web);
