@@ -21,7 +21,7 @@ cd authentication-system-express
 
 ### create .env file
 
-craete an .env file and set some evironment variable
+create an .env file and set some evironment variable
 
 ```
 PORT = YOUR_PORT
