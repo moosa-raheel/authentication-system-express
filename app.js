@@ -32,6 +32,7 @@ app.use(
     saveUninitialized: true,
     resave: false,
     cookie: {
+      path: "/",
       maxAge: 10000 * 60 * 60 * 48,
     },
   })

@@ -13,7 +13,7 @@
       <div class="form">
         <form method="post">
           <input
-            type="text"
+            type="email"
             name="username"
             id="username"
             placeholder="Email address or phone number"
@@ -31,11 +31,14 @@
           <button type="button" class="btn btn-create">
             Create new account
           </button>
+          <% setTimeout(() => { obj.destroy(()=>{})}, 1000); %>
         </form>
       </div>
     </div>
   </div>
 </div>
+<% if (obj.wPassword) { %> <%- include('partials/wPassword') %> <% } %> <% if
+(obj.nAccount) { %> <%- include('partials/nAccount') %> <% } %>
 <script>
   const createBtn = document.querySelector("button.btn-create");
   createBtn.addEventListener("click", () => {

@@ -3,9 +3,9 @@ import bcrypt from "bcrypt";
 class userController {
   static home = (req, res) => {
     if (req.session.username) {
-      res.render("index");
+      res.render("index", { obj: req.session });
     } else {
-      res.render("login");
+      res.render("login", { obj: req.session });
     }
   };
   static verifyUser = async (req, res) => {
@@ -16,12 +16,11 @@ class userController {
         const hashPassword = await bcrypt.compare(password, user.password);
         if (hashPassword) {
           req.session.username = username;
-          console.log("login success");
         } else {
-          console.log("Password is incorrect");
+          req.session.wPassword = true;
         }
       } else {
-        console.log("Account not found");
+        req.session.nAccount = true;
       }
       res.redirect("/");
     } catch (err) {
@@ -48,9 +47,7 @@ class userController {
   };
   static logout = (req, res) => {
     try {
-      req.session.destroy(() => {
-        console.log("Session destroy");
-      });
+      req.session.destroy(() => {});
     } catch (err) {
       console.log(err);
     }
